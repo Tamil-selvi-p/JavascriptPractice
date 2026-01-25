@@ -1,0 +1,83 @@
+# New Year Countdown Timer
+
+## Project Description
+A simple, real-time countdown timer that displays the remaining time until January 1, 2027. The timer updates every second and shows the countdown in **Days**, **Hours**, **Minutes**, and **Seconds**.
+
+## Features
+- ✨ Real-time countdown display
+- 🔄 Updates every second automatically
+- 📊 Shows remaining time in all time units (days, hours, minutes, seconds)
+- 🎯 Targets January 1, 2027 at midnight
+- 📱 Clean and responsive UI
+
+## Project Structure
+```
+05_NewYear_Count/
+├── index.html      # HTML structure with countdown display
+├── main.js         # JavaScript countdown logic
+├── style.css       # Styling for the countdown timer
+└── README.md       # Project documentation
+```
+
+## How It Works
+
+### JavaScript Logic
+1. **Target Date**: Converts the target date (2027-01-01) to milliseconds
+2. **Current Time**: Gets the current time in milliseconds
+3. **Difference Calculation**: Computes the difference between target and current time
+4. **Time Unit Conversion**: Breaks down the difference into:
+   - Days (milliseconds / 86,400,000)
+   - Hours (remaining milliseconds / 3,600,000)
+   - Minutes (remaining milliseconds / 60,000)
+   - Seconds (remaining milliseconds / 1,000)
+5. **DOM Update**: Updates the HTML elements with calculated values
+6. **Loop**: Repeats the calculation every 1000ms (1 second)
+
+### Key Functions
+```javascript
+countDown()  // Main function that calculates and updates countdown values
+```
+
+## Usage
+1. Open `index.html` in a web browser
+2. The countdown timer will start automatically
+3. Watch as the timer updates every second
+
+## Technical Details
+- **Language**: Vanilla JavaScript (No frameworks required)
+- **Update Interval**: 1000ms (1 second)
+- **Date Format**: ISO 8601 (YYYY-MM-DDTHH:mm:ss)
+- **Time Calculations**: Uses milliseconds as the base unit
+
+## Code Example
+```javascript
+const targetDate = new Date('2027-01-01T00:00:00').getTime();
+const now = new Date().getTime();
+const difference = targetDate - now;
+
+const d = Math.floor(difference / (1000 * 60 * 60 * 24)); // Days
+const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Hours
+const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)); // Minutes
+const s = Math.floor((difference % (1000 * 60)) / 1000); // Seconds
+```
+
+## Future Enhancements
+- Add ability to set a custom target date
+- Add sound notifications when countdown reaches certain milestones
+- Add confetti animation when countdown reaches zero
+- Add different themes/color schemes
+- Display a message when the target date is reached
+- Add pause/resume functionality
+
+## Browser Compatibility
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers
+
+## Author
+JavaScript Daily Challenge
+
+## License
+MIT
