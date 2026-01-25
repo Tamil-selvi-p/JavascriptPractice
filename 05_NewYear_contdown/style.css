@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(135, 83, 239);
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* .container {
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+} */
+
+.heading {
+    font-size: 25px;
+    margin: 10px 0;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.year {
+    font-size: 7em;
+    text-align: center;
+    margin: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.first {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.days, .minutes, .seconds, .hours {
+    font-size: 40px;
+    text-align: center;
+}
+
+.det {
+    text-align: center;
+}
